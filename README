@@ -11,7 +11,7 @@ select * from logs WHERE serial='S/N';
 sudo cp /var/log/synolog/.SYNODISKDB /var/log/synolog/.SYNODISKDB.original
 
 #Remove the entries from log in order to reset your HDD Status
-DELETE FROM logs WHERE serial ='Z021S1MZS5HH';
+DELETE FROM logs WHERE serial ='S/N';
 
 .exit
 

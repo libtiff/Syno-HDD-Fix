@@ -1,0 +1,20 @@
+#SYNOLOGY DRIVE CRITICAL STATE AFTER POWERFAILURE (No bad sectors/Healthy 
+
+Get your HDD S/N
+SSH to Synology
+sudo sqlite3 /var/log/synolog/.SYNODISKDB
+.headers on
+
+select * from logs WHERE serial='S/N'; 
+
+#Backup your log db
+sudo cp /var/log/synolog/.SYNODISKDB /var/log/synolog/.SYNODISKDB.original
+
+#Remove the entries from log in order to reset your HDD Status
+DELETE FROM logs WHERE serial ='Z021S1MZS5HH';
+
+.exit
+
+#Restart Synology
+
+and then run File System Check
